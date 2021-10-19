@@ -21,3 +21,9 @@ ttf = [5,6,4,5,6,5,4,8,9,2,5,4,3,8,7]; %e.g.
 
 % sort the ttf by value
 ttf_sort = sort(ttf);
+
+% plot
+figure(1); clf
+plot(ttf_sort)
+xlabel('Time Between Collision')
+ylabel('Cumulative Failure Function')
