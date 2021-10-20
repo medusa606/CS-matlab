@@ -31,12 +31,12 @@ plot(ttf_sort)
 xlabel('Event Number')
 ylabel('Time-To-Failure (min)')
 
-%% TTF-distribution, CDF or cumulative defect/failure function
+%% TTF-distribution, CDF (cumulative distribution function)
 % Normalise to the total number of observed failures
 
 cdf = linspace(1/length(ttf),100,length(ttf));
 figure(2); clf;
-plot(ttf_sort,cdf)
+plot(ttf_sort,cdf,'o-b')
 xlabel('Failure Time (min)')
 ylabel('CDF (%)')
 legend('initial s/w version 1.0','Location','best')
@@ -47,7 +47,7 @@ ttf_v2 = [7,8,6,6,7,9,9,8,9,7,7,6,7,9,7]; %e.g.
 ttf_v2_sort = sort(ttf_v2);
 cdf_v2 = linspace(1/length(ttf_v2),100,length(ttf_v2));
 figure(2); hold on;
-plot(ttf_v2_sort,cdf_v2)
+plot(ttf_v2_sort,cdf_v2,'o-r')
 legend('initial s/w version 1.0','updated s/w version 1.1', ...
     'Location','best')
 
@@ -58,5 +58,8 @@ plot([7,7],[0,50],':r')
 legend('initial s/w version 1.0', ...
     'updated s/w version 1.1','50% failure Rate', ...
     'Location','best')
+%% Add confidence bounds
 
-
+%% Spider plot for pertinent failure modes, F1, F2,...Fn
+% Plot for S/Wv1.0
+% Plot for S/Wv1.1
