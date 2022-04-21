@@ -109,12 +109,26 @@ legend('initial s/w version 1.0', ...
     '',...
     'Location','best')
 
-
+addpath("FileExchange/export_fig/")
+export_fig('CDF_versions', '-png', '-transparent', '-r300');
 %% Spider plot for pertinent failure modes, F1, F2,...Fn
 % Plot for S/Wv1.0
 % Plot for S/Wv1.1
 
 %% Catastophic events?
 % Simulate human
+
+%% CAV-Gym
+x=linspace(-144, 144, 289);
+vm=108;
+vmo=108;
+step_cost = 10;
+reward = -((abs(x-vm))/vmo)*step_cost;
+figure(1); clf; plot(reward)
+%%
+ego_distance = linspace(1,0,101);
+reward = (1-ego_distance)*step_cost;
+figure(1); clf; plot(reward)
+
 
 
